@@ -1,0 +1,44 @@
+header {
+    background-color: black;
+    color: #E8FDFF;
+}
+
+body {
+    background-color: black;
+    font-family: "Rokkitt", ;
+    /* font-family: "Honk", system-ui; */
+    /* font-family: "Bungee Spice", sans-serif; */
+}
+
+header {
+    font-family: "Bungee Spice", sans-serif;
+}
+
+main {
+    background-color: rgb(162, 236, 229);
+    padding: 25px;
+}
+
+.finstagram-post {
+    margin-bottom: 48px;
+}
+
+.finstagram-post .user-info img {
+    border-radius: 50%;
+}
+
+a.photo {    
+    transition: padding 0.5s;
+}
+
+a.photo:hover {
+    padding: 10px;
+}
+
+.user-info h2:hover {
+    font-family: "Bungee Spice", sans-serif;
+}
+
+.user-info h2:active {
+    font-family: "Honk", system-ui;
+}
