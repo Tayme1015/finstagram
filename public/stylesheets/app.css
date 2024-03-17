@@ -42,3 +42,12 @@ a.photo:hover {
 .user-info h2:active {
     font-family: "Honk", system-ui;
 }
+
+
+.form-group {
+    color: white;
+}
+
+.form-group button {
+    color: black
+}
