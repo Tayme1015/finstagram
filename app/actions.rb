@@ -16,10 +16,19 @@
 
 # end
 
+helpers do
+  def current_user
+    User.find_by(id: session[:user_id])
+  end
+end
 
 # When a browser requests the root of the application
 get '/' do 
 
+  @finstagram_posts = FinstagramPost.order(created_at: :desc)  
+  erb(:index)
+  
+end
 #   @finstagram_post_shark = {
 #     username: "sharky_j",
 #     avatar_url: "https://live.staticflickr.com/65535/52358606250_01c667c5da_w.jpg",
@@ -67,10 +76,7 @@ get '/' do
 
 # # Stop
 
-@finstagram_posts = FinstagramPost.order(created_at: :desc)
-erb(:index)
 
-end
 
 
 # This option is not as great
@@ -140,7 +146,7 @@ end
     # if all user params are present
     if @user.save
 
-      "User #{username} saved!"
+      redirect to ('/login')
 
     else
 
@@ -150,3 +156,46 @@ end
 
   end
 
+
+  get "/login" do
+
+    erb(:login)
+
+  end
+
+
+  post "/login" do
+
+    username   = params[:username]
+    password   = params[:password]
+
+    #1. Find user by username
+    
+    @user = User.find_by(username: username)
+
+    #2. If the user exists and check if that user's password matches the password input
+
+    if @user && @user.password == password
+
+      session[:user_id] = @user.id
+
+      redirect to("/")
+
+
+    else
+
+      @error_message = "Login failed"
+
+      erb(:login)
+
+    end
+
+  end
+  
+get "/logout" do
+
+  session[:user_id] = nil
+
+  redirect to('/')
+
+end
