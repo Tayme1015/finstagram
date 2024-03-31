@@ -1,0 +1,58 @@
+
+<ul class="errors">
+
+    <% @finstagram_post.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+
+</ul>
+
+<h2>New Post</h2>
+
+<img id = "preview" src = "" alt = "Preview Finstagram Post" style=" display:none; max-width: 200px;">
+
+<form class = "form-group" method = "POST" action="/finstagram_posts">
+    <div class = "form-group">
+
+        <label for = "photo_url"> Photo URL </label>
+        <input type = "text" id = "photo_url" name = "photo_url" >
+
+    </div>
+
+    <div class = "form-group">
+
+        <button class = "button" type = "submit"> Post </button>
+        
+    </div>
+
+</form>
+
+<script>
+    //DOM Library
+    document.addEventListener("DOMContentLoaded", function() {
+        
+        var photoUrlElm = document.getElementById("photo_url");
+        var previewElm = document.getElementById("preview");
+
+        photoUrlElm.addEventListener("blur", function (event) {
+            // blur event fired, then run this code
+            console.log(event);
+
+            var url = event.target.value;
+
+            console.log(url);
+
+            // either I have a string of chars
+            if (url) {
+                // change the img src attr to the string url
+                previewElm.setAttribute("src", url);
+                // show the img
+                previewElm.style.display = "block";
+            } else {
+                // hide the img
+                previewElm.style.display = "none";
+            }
+        })
+        
+    });
+</script>

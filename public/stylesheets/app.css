@@ -51,3 +51,86 @@ a.photo:hover {
 .form-group button {
     color: black
 }
+
+.errors {
+    color: white
+}
+
+/* 
+  Media Queries go on the bottom of your stylesheet
+
+  Desktop-first: max-widths in DESC
+  Mobile-first: min-widths in ASC
+*/
+
+@media screen and (max-width: 768px) {
+    main {
+      width: 70%;
+    } 
+  }
+  
+  @media screen and (max-width: 480px) {
+    main {
+      width: 95%;
+    } 
+  
+    .user-info h2 {
+      font-size: 1.1em;
+    }
+  
+    .user-info h3,
+    .actions,
+    p {
+      font-size: 0.9em;
+    }
+  }
+
+  .button-heart{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+  }
+
+  .button-heart:before{
+    position: absolute;
+    bottom: 0px;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    content: '';
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    background-color: red;
+  }
+
+.button-heart:before,
+.button-heart:after{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  content: '';
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background-color: red;
+}
+.button-heart:before{
+  bottom: 0px;
+  left: -10px;
+}
+.button-heart:after{
+  top: -10px;
+  right: 0px;
+}
+
+.button-heart{
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
