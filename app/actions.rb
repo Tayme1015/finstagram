@@ -282,3 +282,13 @@ delete '/likes/:id' do
   redirect(back)
 
 end
+
+before '/profile' do
+  redirect to('/login') unless logged_in?
+end
+
+get '/profile' do
+
+  erb(:"profile")
+
+end
