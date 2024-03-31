@@ -45,7 +45,7 @@ a.photo:hover {
 
 
 .form-group {
-    color: white;
+    color: black
 }
 
 .form-group button {
@@ -89,34 +89,35 @@ a.photo:hover {
     position: relative;
     width: 20px;
     height: 20px;
-    background-color: red;
+    background-color: grey;
+    border: none;
   }
 
   .button-heart:before{
     position: absolute;
     bottom: 0px;
     left: -10px;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     content: '';
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -o-border-radius: 50%;
     border-radius: 50%;
-    background-color: red;
+    background-color: grey
   }
 
 .button-heart:before,
 .button-heart:after{
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   content: '';
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  background-color: red;
+  background-color: grey;
 }
 .button-heart:before{
   bottom: 0px;
@@ -133,4 +134,61 @@ a.photo:hover {
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
+    margin-right: 15px;
   }
+
+  .button-heart-like{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border: none;
+  }
+
+  .button-heart-like:before{
+    position: absolute;
+    bottom: 0px;
+    left: -10px;
+    width: 18px;
+    height: 18px;
+    content: '';
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    background-color: red;
+  }
+
+.button-heart-like:before,
+.button-heart-like:after{
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  content: '';
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background-color: red;
+}
+.button-heart-like:before{
+  bottom: 0px;
+  left: -10px;
+}
+.button-heart-like:after{
+  top: -10px;
+  right: 0px;
+}
+
+.button-heart-like{
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-right: 15px;
+  }
+
+.warning{
+    color: red
+}

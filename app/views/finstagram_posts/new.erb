@@ -1,5 +1,54 @@
 
+<h2>New Post</h2>
+
 <ul class="errors">
+  <% @finstagram_post.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+
+<img id="preview" src="" alt="" style="display:none; max-width: 200px;">
+
+<form action="/finstagram_posts" method="POST">
+  <div class="form-group">
+    <label for="photo_url">Photo URL</label>
+    <input type="text" id="photo_url" name="photo_url">
+  </div>
+  <div class="form-group">
+    <button class="button" type="submit">Post</button>
+  </div>
+</form>
+
+<script>
+  // Listen and wait for the DOM to load
+  document.addEventListener("DOMContentLoaded", function() {
+
+    // Store elements as variables
+    var photoUrlElm = document.getElementById("photo_url");
+    var previewElm = document.getElementById("preview");
+
+    // Listen and wait for the cursor to exit the input
+    photoUrlElm.addEventListener("blur", function(event) {
+      // Store the input text as a variable 
+      var url = event.target.value;
+
+      if(url) {
+        // Set the img src attribute to the input's text
+        previewElm.setAttribute("src", url);
+        // Display the img
+        previewElm.style.display = "block";
+      } else {
+        // Hide the img
+        previewElm.style.display = "none";
+      }
+    });
+  });
+</script>
+
+
+<!-- The code below this line has more javascript information -->
+
+<!-- <ul class="errors">
 
     <% @finstagram_post.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -55,4 +104,4 @@
         })
         
     });
-</script>
+</script> -->

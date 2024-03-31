@@ -270,16 +270,18 @@ post "/likes" do
 
   likes.save
 
-  redirect(back)
+  redirect("#{back}#finstagram-post-#{finstagram_post_id}")
 
 end
 
 delete '/likes/:id' do
 
+  finstagram_post_id = params[:finstagram_post_id]
+  
   like = Like.find(params[:id])
   like.destroy
 
-  redirect(back)
+  redirect("#{back}#finstagram-post-#{finstagram_post_id}")
 
 end
 

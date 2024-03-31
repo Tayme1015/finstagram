@@ -11,6 +11,7 @@ body, input {
 a {
   color: #8da7b8;
   text-decoration: none;
+  margin-right: 10px;
 }
 
 label {
